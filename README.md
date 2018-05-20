@@ -14,3 +14,6 @@ var tile_osm = L.tileLayer('https://yourdomain.com/appfolder/https://http://{s}.
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 ```
+
+## License
+MIT http://marco.mit-license.org/
