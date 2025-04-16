@@ -8,6 +8,7 @@ $cacheHeaderTime = 60*60*24*365; // Browser Header (sec)
 $cacheFileTime = 60*60*24*356 / 4; // max File Age (sec)
 
 $domains = array(
+	"tile.openstreetmap.org" => "osm",
 	"a.tile.openstreetmap.org" => "osm",
 	"b.tile.openstreetmap.org" => "osm",
 	"c.tile.openstreetmap.org" => "osm",
@@ -65,9 +66,12 @@ function cacheTile($tileURL, $cacheTileFile) {
     mkdir(dirname($cacheTileFile), 0777, true);
   }
 
+  // TODO SET THE USERAGENT STRING AND
+  // $agent = '<USER AGENT STRING>';
   $ch = curl_init($tileURL);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($ch, CURLOPT_USERAGENT, $agent);
 
 
   $data = curl_exec($ch);

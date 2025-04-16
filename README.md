@@ -8,6 +8,13 @@ Use `https://yourdomain.com/appfolder/https://tileserver.com/{zoom}/{x}/{y}.png`
 
 Add other tile server by extending the $domains array.
 
+Set the user agent acording to the [Tile Usage Policy](https://operations.osmfoundation.org/policies/tiles/).
+
+```php
+# index.php line 70
+$agent = '<USER AGENT STRING>';
+```
+
 ### leaflet Example
 ```
 var tile_osm = L.tileLayer('https://yourdomain.com/appfolder/https://http://{s}.tile.openstreetmap.org/{zoom}/{x}/{y}.png', {
